@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/registration', 'RegistrationController@index');
+Route::post('/submit', 'RegistrationController@submit');
+
+//Route::auth();
+
+Route::get('/home', 'HomeController@index');
