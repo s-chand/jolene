@@ -6,6 +6,15 @@
 
 
     </div>
+    @if (count($errors) > 0)
+        <div class="container container-fluid alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form action="{{ url('submit') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
